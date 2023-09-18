@@ -45,4 +45,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function stock()
+    {
+        return $this->hasMany(Vehicle::class,'user_id');
+    }
 }

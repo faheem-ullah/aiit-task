@@ -93,12 +93,19 @@
         </div>
     </div>
 </div>
-@endsection
-@push('script')
 <script>
 var mobileNumber = document.getElementById('mobileNumber');
 function getNumber(){
-    
+    mobileNumber.innerHTML='';
+    var role = document.querySelector('input[name="role"]:checked').value;
+    console.log(role);
+    if(role=="seller")
+    {
+        mobileNumber.innerHTML = '<label for="role" class="col-md-4 col-form-label text-md-end">Contact Number</label>'+
+                            '<div class="col-md-6">'+
+                                '<input id="contact_number" type="text" class="form-control" name="contact_number" required autocomplete="contact_number">'+
+                            '</div>';
+    }
 }
 </script>
-@endpush
+@stop
